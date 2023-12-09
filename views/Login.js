@@ -28,6 +28,13 @@ export default function Login(){
               password: password,
             }),
         })
+        let json = await response.json()
+        if (json == 'error'){
+            setDisplay('flex')
+            setTimeout(()=>{
+                setDisplay('none')
+            } , 5000)
+        }
     }
 
     return(
