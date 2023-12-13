@@ -1,5 +1,5 @@
 import React from "react";
-import { Text , View , TouchableOpacity ,ImageBackground } from "react-native";
+import { Text , TouchableOpacity ,ImageBackground } from "react-native";
 import { css } from "../assets/css/css";
 import image from "../assets/img/backgroundHome.jpg"
 

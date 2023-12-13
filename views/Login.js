@@ -6,10 +6,9 @@ import { View , Text , KeyboardAvoidingView , Image,
 import { css } from "../assets/css/css";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage'; //salvar dados do login no celular
 
-
-
-export default function Login(){
+export default function Login(props){
 
     const [display , setDisplay] = useState('none')
     const [user , setUser] = useState('null')
@@ -17,7 +16,7 @@ export default function Login(){
     const [login , setLogin] = useState('null')
 
     async function sendForm(){ //funcão responsável pelo envio do formulário de login
-        let response = await fetch ('http://192.168.1.11:3000/login', {
+        let response = await fetch ('http://192.168.1.2:3000/login', { //sempre mudar o ip aqui ao mudar de rede
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -34,6 +33,10 @@ export default function Login(){
             setTimeout(()=>{
                 setDisplay('none')
             } , 5000)
+            await AsyncStorage.clear()
+        } else {
+            await AsyncStorage.setItem('userData',JSON.stringify(json))
+            props.navigation.navigate('AreaRestrita')
         }
     }
 

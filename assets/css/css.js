@@ -23,7 +23,7 @@ const css = StyleSheet.create({
         textAlign:'center',
     },
 
-    //login:
+    //Login:
 
     backgroundLogin:{
         backgroundColor:'#2F83E6',
@@ -73,5 +73,45 @@ const css = StyleSheet.create({
         color:'white',
         fontSize:20,
     },
+
+    //AreaRestrita:
+
+    areaTab:{
+        fontSize:30,
+        fontWeight:'bold',
+        color:"pink"
+    },
+
+    //AreaRestrita -> Profile
+
+    areaMenu:{
+        flexDirection:'row',
+        width:'100%',
+        backgroundColor:'#2F83E6',
+        height:'8%'
+    },
+    buttonHome2:{
+        width:'15%',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    areaTitle:{
+        width:'70%',
+        height:'100%',
+        justifyContent:'center',
+        alignItems:'center',
+        color:'#c50000'
+    },
+    textTitle:{
+        fontWeight:'bold',
+        fontSize:20,
+        color:'#c50000',
+    },
+    buttonLogout:{
+        width:'15%',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+
 })
 export {css}
