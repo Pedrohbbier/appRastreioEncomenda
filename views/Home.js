@@ -3,13 +3,13 @@ import { Text , TouchableOpacity ,ImageBackground } from "react-native";
 import { css } from "../assets/css/css";
 import image from "../assets/img/backgroundHome.jpg"
 
-export default function Home(props) {
+export default function Home({navigation}) {
     return(
             <ImageBackground style={css.ImgBackgroundHome} source={image}  >
                 <TouchableOpacity 
                 style={css.button}
                 onPress={()=>{
-                    props.navigation.navigate('Login')
+                    navigation.navigate('Login')
                 }} >
                     <Text style={css.textButton} >Login</Text>
                 </TouchableOpacity>
@@ -17,7 +17,7 @@ export default function Home(props) {
                 <TouchableOpacity 
                 style={css.button}
                 onPress={()=>{
-                    props.navigation.navigate('Rastreio')
+                    navigation.navigate('Rastreio')
                 }} >
                     <Text style={css.textButton} >Rastreio</Text>
                 </TouchableOpacity>

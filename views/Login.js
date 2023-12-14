@@ -8,7 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage'; //salvar dados do login no celular
 
-export default function Login(props){
+export default function Login({navigation}){
 
     const [display , setDisplay] = useState('none')
     const [user , setUser] = useState('null')
@@ -36,7 +36,7 @@ export default function Login(props){
             await AsyncStorage.clear()
         } else {
             await AsyncStorage.setItem('userData',JSON.stringify(json))
-            props.navigation.navigate('AreaRestrita')
+            navigation.navigate('AreaRestrita')
         }
     }
 

@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
-export default function AreaRestrita(props) {
+export default function AreaRestrita({navigation}) {
 
     const Tab = createMaterialBottomTabNavigator();
 
