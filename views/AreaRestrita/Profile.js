@@ -1,24 +1,59 @@
-import React from "react";
-import { View , Text , TouchableOpacity } from "react-native";
+import React ,{useState , useEffect} from "react";
+import { View , Text , TouchableOpacity , TextInput} from "react-native";
 import { css } from "../../assets/css/css";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import MenuAreaRestrita from "../../assets/components/MenuAreaRestrita";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Profile({navigation}){
 
+    const [idUser , setIdUser] = useState(null)
+    const [senhaAntiga , setSenhaAntiga] = useState(null)
+    const [novaSenha , setNovaSenha] = useState(null)
+    const [confNovaSenha , setConfNovaSenha] = useState(null)
+    const [msg , setMsg] = useState(null)
+
+    useEffect(()=>{
+        async function getIdUser(){
+            let response = await AsyncStorage.getItem('userData')
+            let json=JSON.parse(response)
+            setIdUser(json.id)
+        }
+        getIdUser();
+    })
+
+    async function sendForm(){
+        let response =  await fetch('http://192.168.1.2:3000/verifyPass',{
+            method:'POST',
+            body:JSON.stringify({
+                id: idUser,
+                senhaAntiga: senhaAntiga,
+                novaSenha: novaSenha,
+                confNovaSenha: confNovaSenha
+        }),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        })
+        let json = await response.json()
+        console.log(json)
+        setMsg(json)
+    }
+
     return(
-        <View style={css.areaMenu} >
+        <View>
+            <MenuAreaRestrita title='Perfil' navigation={navigation} />
+            <View>
+                <Text>{msg}</Text>
 
-            <TouchableOpacity onPress={()=>navigation.navigate("Home")} style={css.buttonHome2}  >
-                <Icon name="home" size={25} color={'white'} />
-            </TouchableOpacity>
+                <TextInput placeholder="Senha Antiga:" onChangeText={text=>setSenhaAntiga(text)}  />
+                <TextInput placeholder="Nova Senha:" onChangeText={text=>setNovaSenha(text)} />
+                <TextInput placeholder="Confirmação Nova Senha" onChangeText={text=>setConfNovaSenha(text)} />
 
-            <View style={css.areaTitle} >
-                <Text style={css.textTitle} >Profile</Text>
+                <TouchableOpacity onPress={()=>sendForm()} >
+                    <Text>Trocar</Text>
+                </TouchableOpacity>
             </View>
-
-            <TouchableOpacity style={css.buttonLogout} onPress={()=>navigation.navigate('Login')} >
-                <Icon name="sign-out" size={25} color={'white'} />
-            </TouchableOpacity>
         </View>
     )
 }

@@ -88,7 +88,7 @@ const css = StyleSheet.create({
         flexDirection:'row',
         width:'100%',
         backgroundColor:'#2F83E6',
-        height:'8%'
+        height:'30%'
     },
     buttonHome2:{
         width:'15%',
