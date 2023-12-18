@@ -16,7 +16,7 @@ export default function Login({navigation}){
     const [login , setLogin] = useState('null')
 
     async function sendForm(){ //funcão responsável pelo envio do formulário de login
-        let response = await fetch ('http://192.168.1.2:3000/login', { //sempre mudar o ip aqui ao mudar de rede
+        let response = await fetch ('http://192.168.1.5:3000/login', { //sempre mudar o ip aqui ao mudar de rede
             method: 'POST',
             headers: {
               Accept: 'application/json',

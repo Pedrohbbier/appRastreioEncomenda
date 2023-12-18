@@ -79,7 +79,7 @@ const css = StyleSheet.create({
     areaTab:{
         fontSize:30,
         fontWeight:'bold',
-        color:"pink"
+        color:"pink",
     },
 
     //AreaRestrita -> Profile
@@ -88,7 +88,7 @@ const css = StyleSheet.create({
         flexDirection:'row',
         width:'100%',
         backgroundColor:'#2F83E6',
-        height:'30%'
+        height:80
     },
     buttonHome2:{
         width:'15%',
@@ -112,6 +112,34 @@ const css = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+
+    buttonGoChangePassword:{
+        width:'50%',
+        backgroundColor:'#2F83E6',
+        marginTop:'10%',
+        marginLeft:'25%',
+        height:70,
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:20,
+    },
+
+    goChangeText:{
+        color:'white'
+    },
+
+    //TrocarSenha:
+
+    containerTrocarSenha:{
+        justifyContent:'center',
+        alignItems:'center',
+        width:'100%',
+        height:'90%',
+    },
+
+    textTrocarSenha:{
+        
+    }
 
 })
 export {css}

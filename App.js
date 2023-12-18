@@ -1,9 +1,10 @@
 import React , {useState , useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Home , Login, Profile } from './views/index'
+import {Home , Login} from './views/index'
 import Rastreio from './views/AreaRestrita/Rastreio';
 import AreaRestrita from './views/AreaRestrita/AreaRestrita';
+import TrocarSenha from './views/AreaRestrita/trocarSenha';
 
 
 export default function App() {
@@ -33,6 +34,9 @@ export default function App() {
         <Stack.Screen name="AreaRestrita" component={AreaRestrita} 
           options={{headerShown:false}}
         />
+
+        <Stack.Screen name='TrocarSenha' component={TrocarSenha} />
+
 
       </Stack.Navigator>
     </NavigationContainer>
