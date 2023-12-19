@@ -5,6 +5,7 @@ import {Home , Login} from './views/index'
 import Rastreio from './views/AreaRestrita/Rastreio';
 import AreaRestrita from './views/AreaRestrita/AreaRestrita';
 import TrocarSenha from './views/AreaRestrita/trocarSenha';
+import TrocarNomeUser from './views/AreaRestrita/TrocarNomeUser';
 
 
 export default function App() {
@@ -36,6 +37,8 @@ export default function App() {
         />
 
         <Stack.Screen name='TrocarSenha' component={TrocarSenha} />
+
+        <Stack.Screen name='TrocarNomeUser' component={TrocarNomeUser} />
 
 
       </Stack.Navigator>

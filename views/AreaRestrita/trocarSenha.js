@@ -1,7 +1,6 @@
 import React ,{useState , useEffect} from "react";
 import { View , Text , TouchableOpacity , TextInput} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { css } from "../../assets/css/css";
 
 
@@ -23,7 +22,7 @@ export default function TrocarSenha({navigation}){
     })
 
     async function sendForm(){
-        let response =  await fetch('http://192.168.1.5:3000/verifyPass',{
+        let response =  await fetch('http://192.168.2.123:3000/verifyPass',{
             method:'POST',
             body:JSON.stringify({
                 id: idUser,
@@ -42,15 +41,15 @@ export default function TrocarSenha({navigation}){
     }
 
     return(
-        <View style={css.containerTrocarSenha} >
-            <Text>{msg}</Text>
+        <View style={css.containerTrocar} >
+            <Text style={css.errorTrocar} >{msg}</Text>
 
-            <TextInput placeholder="Senha Antiga:" onChangeText={text=>setSenhaAntiga(text)}  style={css.textTrocarSenha} placeholderTextColor='#2F83E6'  />
-            <TextInput placeholder="Nova Senha:" onChangeText={text=>setNovaSenha(text)} style={css.textTrocarSenha} placeholderTextColor='#2F83E6' />
-            <TextInput placeholder="Confirmação Nova Senha" onChangeText={text=>setConfNovaSenha(text)} style={css.textTrocarSenha} placeholderTextColor='#2F83E6' />
+            <TextInput placeholder="Senha Antiga:" onChangeText={text=>setSenhaAntiga(text)}  style={css.textTrocar} placeholderTextColor='#2F83E6'  />
+            <TextInput placeholder="Nova Senha:" onChangeText={text=>setNovaSenha(text)} style={css.textTrocar} placeholderTextColor='#2F83E6' />
+            <TextInput placeholder="Confirmação Nova Senha" onChangeText={text=>setConfNovaSenha(text)} style={css.textTrocar} placeholderTextColor='#2F83E6' />
 
-            <TouchableOpacity onPress={()=>sendForm()} >
-               <Text>Trocar</Text>
+            <TouchableOpacity onPress={()=>sendForm()} style={css.btnTrocar} >
+               <Text style={css.textBtnTrocar} >Trocar</Text>
             </TouchableOpacity>
         </View>
     )

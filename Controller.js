@@ -27,7 +27,7 @@ app.post('/verifyPass' , async (req , res)=>{
         where:{id:req.body.id, password: req.body.senhaAntiga}
     })
     if (response == null){
-        res.send(JSON.stringify('Senha antiga não confere'))
+        res.send(JSON.stringify('Senha antiga não confere!'))
     } else {
         if(req.body.novaSenha === req.body.confNovaSenha){
             response.password = req.body.novaSenha
@@ -37,6 +37,23 @@ app.post('/verifyPass' , async (req , res)=>{
             res.send(JSON.stringify('Nova senha e confirmação não conferem!'))
         }
         
+    }
+})
+
+app.post('/verifyName' , async(req , res)=>{
+    let response = await user.findOne({
+        where:{id:req.body.id , Name: req.body.nomeAntigo}
+    })
+    if(response == null){
+        res.send(JSON.stringify('Nome antigo não confere!'))
+    } else {
+        if(req.body.nomeNovo == req.body.confNomeNovo){
+            response.Name = req.body.nomeNovo
+            response.save()
+            res.send(JSON.stringify('Nome de usuário atualizado com sucesso!'))
+        } else {
+            res.send(JSON.stringify('Novo nome e confirmação não conferem!'))
+        }
     }
 })
 

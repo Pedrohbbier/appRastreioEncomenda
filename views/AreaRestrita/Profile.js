@@ -9,8 +9,13 @@ export default function Profile({navigation}){
     return(
         <View>
             <MenuAreaRestrita title='Perfil' navigation={navigation} />
+
             <TouchableOpacity style={css.buttonGoChangePassword} onPress={()=>navigation.navigate('TrocarSenha')}  >
                 <Text style={css.goChangeText} >Trocar Senha</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={css.buttonGoChangePassword} onPress={()=>navigation.navigate('TrocarNomeUser')} >
+            <Text style={css.goChangeText} >Trocar Nome de Usuario</Text>
             </TouchableOpacity>
         </View>
     )

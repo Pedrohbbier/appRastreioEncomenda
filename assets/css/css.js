@@ -128,17 +128,48 @@ const css = StyleSheet.create({
         color:'white'
     },
 
-    //TrocarSenha:
+    //TrocarSenha e Nome de Usuario:
 
-    containerTrocarSenha:{
+    containerTrocar:{
         justifyContent:'center',
         alignItems:'center',
+        justifyContent:'center',
         width:'100%',
         height:'90%',
     },
 
-    textTrocarSenha:{
-        
+    textTrocar:{
+        fontSize:20,
+    },
+
+    btnTrocar:{
+        marginTop:20,
+        width:'50%',
+        height:'8%',
+        backgroundColor:'blue',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+
+    textBtnTrocar:{
+        color:'white',
+        fontSize:25,
+        fontWeight:'bold'
+    },
+
+    errorTrocar:{
+        color:'red',
+        marginBottom:10,
+        fontSize:20
+    },
+
+    btnTrocarNomeUser:{
+        marginTop:20,
+        width:'80%',
+        height:'8%',
+        backgroundColor:'blue',
+        justifyContent:'center',
+        alignItems:'center'
     }
 
 })
