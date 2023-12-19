@@ -17,6 +17,10 @@ export default function Profile({navigation}){
             <TouchableOpacity style={css.buttonGoChangePassword} onPress={()=>navigation.navigate('TrocarNomeUser')} >
             <Text style={css.goChangeText} >Trocar Nome de Usuario</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={css.buttonGoChangePassword} onPress={()=>navigation.navigate('AddPhoto')} >
+            <Text style={css.goChangeText} >Adicionar foto de usuário</Text>
+            </TouchableOpacity>
         </View>
     )
 }

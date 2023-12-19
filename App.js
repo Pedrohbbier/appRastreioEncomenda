@@ -6,6 +6,7 @@ import Rastreio from './views/AreaRestrita/Rastreio';
 import AreaRestrita from './views/AreaRestrita/AreaRestrita';
 import TrocarSenha from './views/AreaRestrita/trocarSenha';
 import TrocarNomeUser from './views/AreaRestrita/TrocarNomeUser';
+import AddPhoto from './views/AreaRestrita/AddPhoto';
 
 
 export default function App() {
@@ -39,6 +40,8 @@ export default function App() {
         <Stack.Screen name='TrocarSenha' component={TrocarSenha} />
 
         <Stack.Screen name='TrocarNomeUser' component={TrocarNomeUser} />
+
+        <Stack.Screen name='AddPhoto' component={AddPhoto} />
 
 
       </Stack.Navigator>

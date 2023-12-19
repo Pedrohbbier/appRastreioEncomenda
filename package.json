@@ -26,7 +26,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.2",
     "react-navigation-material-bottom-tabs": "^2.3.5",
-    "sequelize": "^6.35.1"
+    "sequelize": "^6.35.1",
+    "expo-camera": "~13.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
