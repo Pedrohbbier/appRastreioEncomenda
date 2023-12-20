@@ -113,7 +113,7 @@ const css = StyleSheet.create({
         alignItems:'center'
     },
 
-    buttonGoChangePassword:{
+    buttonGoChange:{
         width:'50%',
         backgroundColor:'#2F83E6',
         marginTop:'10%',

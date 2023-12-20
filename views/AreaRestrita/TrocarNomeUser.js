@@ -21,7 +21,7 @@ export default function TrocarNomeUser({navigation}){
     })
 
     async function sendForm(){
-        let response =  await fetch('http://192.168.2.123:3000/verifyName',{
+        let response =  await fetch('http://192.168.1.6:3000/verifyName',{
             method:'POST',
             body:JSON.stringify({
                 id: idUser,

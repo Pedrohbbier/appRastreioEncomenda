@@ -22,7 +22,7 @@ export default function TrocarSenha({navigation}){
     })
 
     async function sendForm(){
-        let response =  await fetch('http://192.168.2.123:3000/verifyPass',{
+        let response =  await fetch('http://192.168.1.6:3000/verifyPass',{
             method:'POST',
             body:JSON.stringify({
                 id: idUser,
