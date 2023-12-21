@@ -71,7 +71,7 @@ export default function Cadastro({navigation}){
             const image = config.urlRoot+'img/code.png'
             FileSystem.downloadAsync(
                 image,
-                FileSystem.documentDirectory+'png'
+                FileSystem.documentDirectory+'.png'
             ).then(({uri})=>{
                 Sharing.shareAsync(uri)
             })
