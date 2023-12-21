@@ -30,7 +30,8 @@
     "react-navigation-material-bottom-tabs": "^2.3.5",
     "sequelize": "^6.35.1",
     "expo-file-system": "~15.4.5",
-    "expo-sharing": "~11.5.0"
+    "expo-sharing": "~11.5.0",
+    "expo-barcode-scanner": "~12.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -175,5 +175,17 @@ const css = StyleSheet.create({
     //cadastro:
 
 
+    //edição
+    qr__code:(display='flex')=>({
+        width:'100%',
+        height:'100%',
+        backgroundColor:'black',
+        justifyContent:'center',
+        display:display,
+    }),
+    qr__form:(display='none')=>({
+        width:'100%',
+        display:display,
+    })
 })
 export {css}
