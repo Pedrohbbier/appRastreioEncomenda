@@ -170,7 +170,10 @@ const css = StyleSheet.create({
         backgroundColor:'blue',
         justifyContent:'center',
         alignItems:'center'
-    }
+    },
+
+    //cadastro:
+
 
 })
 export {css}

@@ -1,6 +1,5 @@
 import React,{useState , useEffect} from "react";
-import { Text , View , Button , TouchableOpacity } from "react-native";
-import AsyncStorage from '@react-native-async-storage/async-storage'; //salvar dados do login no celular
+import { BackHandler , Alert } from "react-native";
 import {Profile , Cadastro , Edicao} from "../index"
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,9 +7,31 @@ import { css } from "../../assets/css/css";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-
-
 export default function AreaRestrita({navigation}) {
+
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('Alerta!', 'Deseja mesmo sair do app?', [
+        {
+          text: 'Não',
+          onPress: () => null,
+          style: 'cancel',
+        },
+        {text: 'Sim', onPress: () => {
+          navigation.navigate('Home')
+        }
+      },
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => backHandler.remove();
+  }, []);
 
     const Tab = createMaterialBottomTabNavigator();
 
