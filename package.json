@@ -15,10 +15,12 @@
     "@react-navigation/native-stack": "^6.9.17",
     "cors": "^2.8.5",
     "expo": "~49.0.15",
+    "expo-camera": "~13.4.4",
     "expo-local-authentication": "~13.4.1",
     "expo-status-bar": "~1.6.0",
     "express": "^4.18.2",
     "mysql2": "^3.6.5",
+    "qrcode": "^1.5.3",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-paper": "^3.12.0",
@@ -26,8 +28,7 @@
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.2",
     "react-navigation-material-bottom-tabs": "^2.3.5",
-    "sequelize": "^6.35.1",
-    "expo-camera": "~13.4.4"
+    "sequelize": "^6.35.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

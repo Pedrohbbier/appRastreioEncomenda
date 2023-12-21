@@ -2,6 +2,7 @@ import React, { useState , useEffect } from "react";
 import { View , TouchableOpacity , Text , TextInput} from "react-native";
 import { css } from "../../assets/css/css";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import config from '../../config/config.json'
 
 export default function TrocarNomeUser({navigation}){
 
@@ -21,7 +22,7 @@ export default function TrocarNomeUser({navigation}){
     })
 
     async function sendForm(){
-        let response =  await fetch('http://192.168.1.6:3000/verifyName',{
+        let response =  await fetch(config.urlRoot+'verifyName',{
             method:'POST',
             body:JSON.stringify({
                 id: idUser,

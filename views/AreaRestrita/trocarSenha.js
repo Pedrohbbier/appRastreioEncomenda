@@ -2,6 +2,7 @@ import React ,{useState , useEffect} from "react";
 import { View , Text , TouchableOpacity , TextInput} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { css } from "../../assets/css/css";
+import config from '../../config/config.json'
 
 
 export default function TrocarSenha({navigation}){
@@ -22,7 +23,7 @@ export default function TrocarSenha({navigation}){
     })
 
     async function sendForm(){
-        let response =  await fetch('http://192.168.1.6:3000/verifyPass',{
+        let response =  await fetch(config.urlRoot+'verifyPass',{
             method:'POST',
             body:JSON.stringify({
                 id: idUser,

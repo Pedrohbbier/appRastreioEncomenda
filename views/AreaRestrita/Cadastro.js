@@ -1,5 +1,5 @@
 import React , {useState , useEffect} from "react";
-import { View , Text , TouchableOpacity , TextInput } from "react-native";
+import { View , Text ,Button ,TouchableOpacity , TextInput , Image } from "react-native";
 import MenuAreaRestrita from "../../assets/components/MenuAreaRestrita";
 import config from '../../config/config.json'
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -21,7 +21,8 @@ export default function Cadastro({navigation}){
 
         useEffect(()=>{
             randomCode()
-        } , [])
+            setProduct(null)
+        } , [response]) //toda vez que response for alterado vai executar a função randomCode
 
         //Pegar o id do user
         async function getUser(){
@@ -45,16 +46,39 @@ export default function Cadastro({navigation}){
 
         //Envio do formulário
         async function sendForm(){
-            let response = await fetch()
+            let response = await fetch(config.urlRoot+'create' , {
+            method:'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body:JSON.stringify({
+                userId: user,
+                code: code,
+                product: product,
+                local: adresss,
+                }),
+            })
+            let json = await response.json()
+            setResponse(json)
         }
 
         return(
             <View>
                 <MenuAreaRestrita title='Cadastro' navigation={navigation} />
+
+                {response && (
+                    <View>
+                        <Image source={{uri:response , height:180, width:180}} />
+                        <Button title="Compartilhar" />
+                    </View>
+                )}
+
                 <View>
                     <TextInput
                         placeholder="Nome do produto"
                         onChangeText={text=>setProduct(text)}
+                        value={product}
                     />
 
                     <TouchableOpacity onPress={()=>sendForm()} >
@@ -64,3 +88,5 @@ export default function Cadastro({navigation}){
             </View>
         )
 }
+
+//parei na aula 21

@@ -7,6 +7,7 @@ import { css } from "../assets/css/css";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage'; //salvar dados do login no celular
+import config from '../config/config.json'
 
 export default function Login({navigation}){
 
@@ -16,7 +17,7 @@ export default function Login({navigation}){
     const [login , setLogin] = useState('null')
 
     async function sendForm(){ //funcão responsável pelo envio do formulário de login
-        let response = await fetch ('http://192.168.1.6:3000/login', { 
+        let response = await fetch (config.urlRoot+'login', { 
             method: 'POST',
             headers: {
               Accept: 'application/json',
